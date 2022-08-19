@@ -25,8 +25,11 @@
 ![Teamcity](/src/images/screenshots/teamcity_jenkins/Teamcity5.png)
 
 Настраиваем параметры :
+
 **Name:** CI/CD Jenkins AutoTests (Dependencies "Deploy")
+
 **Build configuration ID:** Заполняется автоматически
+
 Нажимаем **Create.**
 
 ## Настраиваем Dependencies
@@ -92,7 +95,7 @@ crumb=$(wget -q --auth-no-challenge --user xxxxx --password xxxxx --output-docum
 'http://192.xxx.x.xxx:xxx/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)')
 curl -X POST -H "$crumb" --user xxxxx:xxxxxxxxxxxxxxxxxxxxxx
 
-http://***.***.*.***:****/job/******/build
+http://xxx.xxx.x.xxx:xxxxx/job/xxxxxxxxx/build
 ```
 
 ![Teamcity](/src/images/screenshots/teamcity_jenkins/Teamcity15.png)
