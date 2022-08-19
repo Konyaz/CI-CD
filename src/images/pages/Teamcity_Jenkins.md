@@ -90,11 +90,9 @@
 
 
 ```bash
-crumb=$(wget -q --auth-no-challenge --user xxxxx --password xxxxx --output-document -
-
-'http://192.xxx.x.xxx:xxx/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)')
-curl -X POST -H "$crumb" --user xxxxx:xxxxxxxxxxxxxxxxxxxxxx
-
+crumb=$(wget -q --auth-no-challenge --user xxxxx --password xxxxx --output-document - 
+'http://192.xxx.x.xxx:xxx/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)') 
+curl -X POST -H "$crumb" --user xxxxx:xxxxxxxxxxxxxxxxxxxxxx 
 http://xxx.xxx.x.xxx:xxxxx/job/xxxxxxxxx/build
 ```
 
