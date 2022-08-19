@@ -9,8 +9,8 @@
 
 Переходим в Jenkins скачиваем плагины: GitLab Plugin, GitLab Authentication plugin, Gitlab API Plugin.
 
-![Jenkins](/src/images/screenshots/jenkins1.png)
-![Jenkins](/src/images/screenshots/jenkins2.png)
+![Jenkins](/src/images/screenshots/jenkins_gitlab/jenkins1.png)
+![Jenkins](/src/images/screenshots/jenkins_gitlab/jenkins2.png)
 
 ## Создаём Access Tokens в Gitlab
 Открываем GitLab переходим в Preferences => Access Tokens
@@ -23,22 +23,22 @@
 
 Нажимаем Create personal access token
 
-![Gitlab](/src/images/screenshots/gitlab1.png)
+![Gitlab](/src/images/screenshots/jenkins_gitlab/gitlab1.png)
 
 На появившейся странице **сохраняем сгенерированный токен**  Your new personal access token
 
-![Gitlab](/src/images/screenshots/gitlab2.png)
+![Gitlab](/src/images/screenshots/jenkins_gitlab/gitlab2.png)
 
 ## Создаём Credentials в Jenkins
 
 Открываем Jenkins переходим в настройки открываем Manage Credentials
 
-![Jenkins](/src/images/screenshots/jenkins3.png)
+![Jenkins](/src/images/screenshots/jenkins_gitlab/jenkins3.png)
 
 Далее переходим  **Stores scoped to Jenkins => Domains => (global) => Add Credentials**
 
-![Jenkins](/src/images/screenshots/jenkins4.png)
-![Jenkins](/src/images/screenshots/jenkins5.png)
+![Jenkins](/src/images/screenshots/jenkins_gitlab/jenkins4.png)
+![Jenkins](/src/images/screenshots/jenkins_gitlab/jenkins5.png)
 
 в **Kind** выбираем -  **GitLab API token**
 
@@ -50,26 +50,26 @@
 
 Нажимаем Ок
 
-![Jenkins](/src/images/screenshots/jenkins6.png)
+![Jenkins](/src/images/screenshots/jenkins_gitlab/jenkins6.png)
 
 ## Проверка создания Credentials
 **Manage Credentials => Stores scoped to Jenkins => Domains => (global) => Add Credentials**
 
 В **Global credentials (unrestricted)** должен быть наш Credentials
 
-![Jenkins](/src/images/screenshots/jenkins7.png)
+![Jenkins](/src/images/screenshots/jenkins_gitlab/jenkins7.png)
 
 ## Конфигурация системы в Jenkins
 
 Переходим в настройки заходим в Конфигурация системы
 
-![Jenkins](/src/images/screenshots/jenkins7.1.png)
+![Jenkins](/src/images/screenshots/jenkins_gitlab/jenkins7.1.png)
 
 Находим секцию **Gitlab**
 
 Заполняем **Connection name , Gitlab host URL, Credentials**
 
-![Jenkins](/src/images/screenshots/jenkins8.png)
+![Jenkins](/src/images/screenshots/jenkins_gitlab/jenkins8.png)
 
 Нажимаем применить и сохранить
 
@@ -77,7 +77,7 @@
 
 Нажимаем Создать Item Создать задачу со свободной конфигурацией
 
-![Jenkins](/src/images/screenshots/jenkins9.png)
+![Jenkins](/src/images/screenshots/jenkins_gitlab/jenkins9.png)
 
 Вводим имя itema
 
@@ -85,7 +85,7 @@
 
 Нажимаем Ok
 
-![Jenkins](/src/images/screenshots/jenkins10.png)
+![Jenkins](/src/images/screenshots/jenkins_gitlab/jenkins10.png)
 
 ## Конфигурируем сборку, получаем Webhook и Secret token
 
@@ -105,7 +105,7 @@ Cтавим чекбокс напротив - Push Events
 
 Нажимаем Расширенные 
 
-![Jenkins](/src/images/screenshots/jenkins11.png)
+![Jenkins](/src/images/screenshots/jenkins_gitlab/jenkins11.png)
 
 Secret token
 
@@ -113,35 +113,35 @@ Secret token
 
 **Сохраняем полученный токен.**
 
-![Jenkins](/src/images/screenshots/jenkins11.1.png)
+![Jenkins](/src/images/screenshots/jenkins_gitlab/jenkins11.1.png)
 
 **Сборка**
 
 Нажимаем Добавить шаг сборки 
 
-![Jenkins](/src/images/screenshots/jenkins12.png)
+![Jenkins](/src/images/screenshots/jenkins_gitlab/jenkins12.png)
 
 **Gradle Version** - выбираем версию Gradle
 
 **Tasks** - clean test
 
-![Jenkins](/src/images/screenshots/jenkins13.png)
+![Jenkins](/src/images/screenshots/jenkins_gitlab/jenkins13.png)
 
 **После Сборочные операции**
 
 Нажимаем Добавить шаг после сборки 
 
-![Jenkins](/src/images/screenshots/jenkins14.png)
+![Jenkins](/src/images/screenshots/jenkins_gitlab/jenkins14.png)
 
 Выбираем Allure Report
 
-![Jenkins](/src/images/screenshots/jenkins14.1.png)
+![Jenkins](/src/images/screenshots/jenkins_gitlab/jenkins14.1.png)
 
 **Results: Path - build/allure-results**
 
 Нажимаем Применить и Сохранить 
 
-![Jenkins](/src/images/screenshots/jenkins14.2.png)
+![Jenkins](/src/images/screenshots/jenkins_gitlab/jenkins14.2.png)
 
 ## Предоставляем доступ Gitlab к локальному репозиторию
 
@@ -155,13 +155,13 @@ Secret token
 
 В **Local IP addresses and domains names that hooks and services may access** прописываем адрес расположения Jenkins xxx.xxx.x.xxx
 
-![Gitlab](/src/images/screenshots/gitlab3.png)
+![Gitlab](/src/images/screenshots/jenkins_gitlab/gitlab3.png)
 
 Если не предоставить доступ, то будет ошибка
 
 **Url is blocked: requests to the local network are not allowed**
 
-![Gitlab](/src/images/screenshots/gitlab4.png)
+![Gitlab](/src/images/screenshots/jenkins_gitlab/gitlab4.png)
 
 ## Подключаем Webhook в Gitlab
 
@@ -179,7 +179,7 @@ Secret token
 
 Проверяем что в **Project Hooks появился наш Webhook**
 
-![Gitlab](/src/images/screenshots/gitlab5.png)
+![Gitlab](/src/images/screenshots/jenkins_gitlab/gitlab5.png)
 
 ## Проверка автоматический запуск сборки после Push
 
@@ -187,8 +187,8 @@ Secret token
 
 Переходим в Jenkins нажимаем Dashboard переходим в Джобу
 
-![Jenkins](/src/images/screenshots/jenkins15.png)
+![Jenkins](/src/images/screenshots/jenkins_gitlab/jenkins15.png)
 
 При правильном выполнении всех действий Сборка должна запуститься автоматически с указаниями старта из Gitlab и именем пользователя того кто осуществил Push
 
-![Jenkins](/src/images/screenshots/jenkins16.png)
+![Jenkins](/src/images/screenshots/jenkins_gitlab/jenkins16.png)
