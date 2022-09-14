@@ -8,6 +8,8 @@
 ![Git](src/images/icons/Git.svg)
 ![GitLab](src/images/icons/GitLab.svg)
 ![IntellijIdea](src/images/icons/Intellij_Idea.svg)
+![Gradle](src/images/icons/Gradle.svg)
+![JUnit5](src/images/icons/JUnit5.svg)
 ![Teamcity](src/images/icons/Teamcity.svg)
 ![Jenkins](src/images/icons/Jenkins.svg)
 
