@@ -7,6 +7,7 @@
 ### Technology Stack
 ![Git](src/images/icons/Git.svg)
 ![GitLab](src/images/icons/GitLab.svg)
+![IntellijIdea](src/images/icons/Intellij_Idea.svg)
 ![Teamcity](src/images/icons/Teamcity.svg)
 ![Jenkins](src/images/icons/Jenkins.svg)
 
